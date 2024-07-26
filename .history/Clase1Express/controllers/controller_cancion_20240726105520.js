@@ -2,6 +2,7 @@ var cancion = require('../models/cancion_models'),
             express= require('express'),
             router =express.Router();
 
+
 router.post('/crear',(req,res)=>{
     var body=req.body;
     console.log("llegó hasta aquí")
@@ -22,15 +23,5 @@ router.post('/crear',(req,res)=>{
         throw err;
     });;
 });
-
-router.get('/',(req,res)=>{
-    cancion.find({},{
-    }).then(function (docs) {
-    res.status(200).json(docs)
-    }).catch(function (err) {
-    console.log(err);
-    throw err;
-});;
-})
 
 module.exports=router;
